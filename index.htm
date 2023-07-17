@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bài tập JS</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Line awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+      integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Main css -->
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body class="container">
+    <!-- Chương trình tính tiền lương nhân viên -->
+    <div class="salary w-50 my-5 p-5 shadow-lg rounded-lg">
+      <h1>Tính tiền lương</h1>
+      <div class="d-flex">
+        <div class="form-group w-50 mr-3">
+          <label for="luongMotNgay">Lương một ngày</label>
+          <input
+            type="number"
+            class="form-control"
+            id="luongMotNgay"
+            value="100000"
+            placeholder="Nhập lương một ngày"
+          />
+        </div>
+        <div class="form-group w-50">
+          <label for="soNgayLam">Số ngày làm</label>
+          <input
+            type="number"
+            class="form-control"
+            id="soNgayLam"
+            placeholder="Số ngày làm"
+          />
+        </div>
+      </div>
+      <button
+        onclick="handleCalculateSalary()"
+        id="calculateSalary"
+        class="btn btn-primary"
+      >
+        Tính Lương
+      </button>
+      <div class="mt-3 p-2 primary-color text-white rounded">
+        <i class="las la-money-bill mr-1"></i>
+        <span id="showSalary"></span>
+      </div>
+    </div>
+
+    <!-- Chương trình tính tiền lương nhân viên -->
+    <div class="salary w-75 my-5 p-5 shadow-lg rounded-lg">
+      <h1>Tính giá trị trung bình</h1>
+      <div class="d-flex flex-wrap">
+        <div class="form-group w-25 mr-3">
+          <label for="numb-1">Số thứ 1</label>
+          <input
+            type="number"
+            placeholder="Nhập số thứ 1"
+            class="form-control"
+            id="numb-1"
+          />
+        </div>
+        <div class="form-group w-25 mr-3">
+          <label for="numb-2">Số thứ 2</label>
+          <input
+            type="number"
+            placeholder="Nhập số thứ 2"
+            class="form-control"
+            id="numb-2"
+          />
+        </div>
+        <div class="form-group w-25 mr-3">
+          <label for="numb-3">Số thứ 3</label>
+          <input
+            type="number"
+            placeholder="Nhập số thứ 3"
+            class="form-control"
+            id="numb-3"
+          />
+        </div>
+        <div class="form-group w-25 mr-3">
+          <label for="numb-4">Số thứ 4</label>
+          <input
+            type="number"
+            placeholder="Nhập số thứ 4"
+            class="form-control"
+            id="numb-4"
+          />
+        </div>
+        <div class="form-group w-25 mr-3">
+          <label for="numb-5">Số thứ 5</label>
+          <input
+            type="number"
+            placeholder="Nhập số thứ 5"
+            class="form-control"
+            id="numb-5"
+          />
+        </div>
+      </div>
+      <button
+        onclick="handleCalculateAverage()"
+        id="calculateSalary"
+        class="btn btn-primary"
+      >
+        Tính trung bình
+      </button>
+      <div class="mt-3 p-2 primary-color text-white rounded">
+        <i class="lab la-asymmetrik"></i>
+        <span id="showAverage"></span>
+      </div>
+    </div>
+
+    <!-- Chương trình quy đổi tiền -->
+    <div class="salary w-50 my-5 p-5 shadow-lg rounded-lg">
+      <h1>Quy đổi tiền</h1>
+      <div class="d-flex">
+        <div class="form-group w-50 mr-3">
+          <label for="usd">Đổi từ USD sang vnđ</label>
+          <input
+            type="number"
+            class="form-control"
+            id="usdUser"
+            placeholder="Nhập số tiền USD"
+          />
+        </div>
+      </div>
+      <button
+        onclick="handleCalculateCurrency()"
+        id="calculateCurrency"
+        class="btn btn-primary"
+      >
+        Quy đổi
+      </button>
+      <div class="mt-3 p-2 primary-color text-white rounded">
+        <i class="las la-money-bill mr-1"></i>
+        <span id="showCurrency"></span>
+      </div>
+    </div>
+
+    <!-- Chương trình tính chu vi diện tích hình chữ nhật -->
+    <div class="salary w-50 my-5 p-5 shadow-lg rounded-lg">
+      <h1>Tính chu vi, diện tích hình chữ nhật</h1>
+      <div class="d-flex">
+        <div class="form-group w-50 mr-3">
+          <label for="lengthRect">Chiều dài</label>
+          <input
+            type="number"
+            class="form-control"
+            id="lengthRect"
+            placeholder="Nhập chiều dài"
+          />
+        </div>
+        <div class="form-group w-50 mr-3">
+          <label for="widthRect">Chiều rộng</label>
+          <input
+            type="number"
+            class="form-control"
+            id="widthRect"
+            placeholder="Nhập chiều rộng"
+          />
+        </div>
+      </div>
+      <button
+        onclick="handleCalculateRect()"
+        id="calculateRect"
+        class="btn btn-primary"
+      >
+        Tính
+      </button>
+      <div class="mt-3 p-2 primary-color text-white rounded">
+        <i class="las la-calculator mr-1"></i>
+        <span id="showRect"></span>
+      </div>
+    </div>
+
+    <!-- Chương trình tính tổng 2 ký số -->
+    <div class="salary w-50 my-5 p-5 shadow-lg rounded-lg">
+      <h1>Tính tổng 2 ký số</h1>
+      <div class="d-flex">
+        <div class="form-group w-50 mr-3">
+          <label for="lengthRect">Number</label>
+          <input
+            type="number"
+            class="form-control"
+            id="number"
+            placeholder="Nhập số có 2 chữ số"
+          />
+        </div>
+      </div>
+      <button
+        onclick="handleCalculateSum()"
+        id="calculateSum"
+        class="btn btn-primary"
+      >
+        Tính
+      </button>
+      <div class="mt-3 p-2 primary-color text-white rounded">
+        <i class="las la-plus-circle mr-1"></i>
+        <span id="showResult"></span>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
